@@ -57,16 +57,33 @@
 
     <form name="myForm">
 
-        公司名:
-        <input type="text" ng-model="shop.shopName">
-        <br>公司类别:
-        <input type="text" ng-model="shop.shopCategory">
-        <br>地址:
-        <input type="text" ng-model="shop.shopAddress">
-        <br>简介:
-        <input type="text" ng-model="shop.shopIntroduction">
-        <br>联系方式:
-        <input type="text" ng-model="shop.shopContactWay">
+        owner:
+        <input type="text" ng-model="shop.owner">
+        <br>name:
+        <input type="text" ng-model="shop.name">
+        <br>dispName:
+        <input type="text" ng-model="shop.name">
+        <br>address:
+        <input type="text" ng-model="shop.address">
+        <br>latitude:
+        <input type="number" ng-model="shop.latitude">
+        <br>longitude:
+        <input type="number" ng-model="shop.longitude">
+        <br>category:
+        <input type="text" ng-model="shop.category">
+        <br>administrator:
+        <input type="text" ng-model="shop.administrator">
+        <br>insertDate:
+        <input type="datetime" ng-model="shop.insertDate">
+        <br>updateDate:
+        <input type="datetime" ng-model="shop.updateDate">
+        <br>delFlg:
+        <input type="number" ng-model="shop.delFlg">
+        <br>intro:
+        <input type="text" ng-model="shop.intro">
+        <br>logo:
+        <input type="text" ng-model="shop.logo">
+
 
         <br>图片:
         <br>图片:
@@ -113,7 +130,7 @@
 
                 $scope.sendJson = function () {
                     $scope.product.timeLimit = new Date($scope.year, $scope.month - 1, $scope.day, '23', '59', '59');
-                    $http.post("http://120.24.168.7/api/posts", $scope.product).success(function (data) {
+                    $http.post("http://ec2-54-238-168-110.ap-northeast-1.compute.amazonaws.com/app/products", $scope.product).success(function (data) {
                         console.log(data)
                         if (data == "already exists") {
                             alert("商品名已经存在，推送失败")
@@ -136,7 +153,7 @@
 
 
                 $scope.sendJsonShop = function () {
-                    $http.post("http://120.24.168.7/api/registerShop", $scope.shop).success(function (data) {
+                    $http.post("http://ec2-54-238-168-110.ap-northeast-1.compute.amazonaws.com/app/shops", $scope.shop).success(function (data) {
                         console.log(data)
 
                             alert("成功推送")
