@@ -105,7 +105,6 @@ export class ProductPage {
       buttons: [
         {
           text: 'Delete',
-          role: 'destructive',
           icon: !this.platform.is('ios') ? 'trash' : null,
           handler: () => {
             console.log('Delete clicked');

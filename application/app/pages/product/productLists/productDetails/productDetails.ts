@@ -43,7 +43,6 @@ export class ProductDetails {
             buttons: [
                 {
                     text: 'Facebook',
-                    role: 'destructive',
                     icon: 'logo-facebook',
                     handler: () => {
                         console.log('Delete clicked');
